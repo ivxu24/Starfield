@@ -80,3 +80,72 @@ class OddballParticle extends Particle
   }
 }
 }
+
+11/4
+
+class Particle {
+  double myX, myY, myAngle, mySize, mySpeed;
+  int myColor;
+  Particle () {
+    myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
+    myX = (int)(Math.random()*300);
+    myY = (int)(Math.random()*300);
+    mySize = 6.5;
+    myAngle = (double)(Math.random()*2*Math.PI);
+    mySpeed = (double)(Math.random()*10);
+  } 
+
+void move () {
+// myX = myX + (int)(Math.random()*10)-2;
+ //myY = myY + (int)(Math.random()*10)-6;
+     myX = myX + mySpeed;
+    myY = myY + mySpeed;
+    if (myX >= 300) {
+      myX = -150;
+    }
+}
+
+void show () {
+  fill (myColor);
+  ellipse ((float)myX, (float)myY, 5,5);
+
+}
+
+Particle [] carl;
+void setup() 
+{
+  size (500,500);
+  carl = new Particle [100];
+  for (int i = 0; i < 10; i++){
+    carl[i] = new Particle ();
+  for (int j = 10; j< carl.length; j++) {
+    carl[j] = new OddballParticle ();
+  }
+}
+}
+
+
+void draw() {
+  background(233,212,247);
+for (int i = 0; i<carl.length; i++) {
+    carl[i].move();
+    carl[i].show();
+  }
+}
+
+
+class OddballParticle extends Particle
+{
+  OddBallParticle()
+  {
+    myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
+    myX = (int)(Math.random()*300);
+    myY = (int)(Math.random()*300);
+    mySize = 6.5;
+    myAngle = (double)(Math.random()*2*Math.PI);
+    mySpeed = (double)(Math.random()*10);
+  }
+
+
+}
+}
