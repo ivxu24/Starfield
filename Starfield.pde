@@ -16,8 +16,7 @@ class Particle {
   int myColor;
   Particle () {
     myColor = color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
-    myX = 250;
-    myY = 250;
+    myX = myY= 250;
     myAngle = Math.random()*2*Math.PI;
     mySpeed = Math.random() *16;
   } 
