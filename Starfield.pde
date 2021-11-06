@@ -23,7 +23,7 @@ class Particle
   int myColor;
 
   Particle() {
-    mySize = Math.random() * 5;
+    mySize = Math.random() * 2;
     myX = myY = 200;
     myAngle = Math.random() * (2 * Math.PI);
     mySpeed = (Math.random() * 10) ;
